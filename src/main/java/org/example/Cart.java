@@ -1,22 +1,21 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 public class Cart {
-    private List<Item> items;
+    private HashMap<Item, Integer> lineItem = new HashMap<>();
 
     public Cart() {
-        this.items = new ArrayList<>();
+        this.lineItem = new HashMap<>();
     }
 
-    public  void add(Item item) {
-        items.add(item);
+    public  void add(Item item,int quantity) {
+        lineItem.put(item,quantity);
     }
 
     public void show()
     {
-        items.forEach(item -> System.out.println(item.getName()));
+        lineItem.forEach((item, quantity) -> System.out.println(item.getName()));
     }
 }
 
