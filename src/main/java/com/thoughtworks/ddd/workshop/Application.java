@@ -3,6 +3,9 @@ package com.thoughtworks.ddd.workshop;
 import com.thoughtworks.ddd.workshop.domain.Cart;
 import com.thoughtworks.ddd.workshop.domain.Price;
 import com.thoughtworks.ddd.workshop.domain.Product;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class Application {
