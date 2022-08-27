@@ -12,6 +12,8 @@ public class Cart {
 
   private Set<String> deletedProducts;
 
+  private boolean isCheckedOut;
+
   public Cart() {
     this.items = new ArrayList<>();
     this.deletedProducts = new HashSet<>();
@@ -40,4 +42,23 @@ public class Cart {
     return this == anotherCart;
   }
 
+  public Order checkout() {
+    if(isCheckedOut) {
+      //TODO return existing order
+      return null;
+    }
+    isCheckedOut = true;
+    //create Order
+    List<Product> products = new ArrayList<>();
+    items.forEach(item -> {
+      for(int i=1; i<=item.getQuantity(); i++) {
+        products.add(item.getProduct());
+      }
+    });
+    return new Order(products);
+  }
+
+  public boolean isCheckedOut() {
+    return isCheckedOut;
+  }
 }
